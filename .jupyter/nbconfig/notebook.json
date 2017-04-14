@@ -1,0 +1,22 @@
+{
+  "load_extensions": {
+    "jupyter-matplotlib/extension": true,
+    "hide_code/hide_code": true
+  },
+  "keys": {
+    "command": {
+      "bind": {
+        "u": "jupyter-notebook:undo-cell-deletion",
+        "o": "jupyter-notebook:insert-cell-below",
+        "shift-o": "jupyter-notebook:insert-cell-above"
+      },
+      "unbind": [
+        "o",
+        "shift-o"
+      ]
+    }
+  },
+  "Notebook": {
+    "Header": false
+  }
+}

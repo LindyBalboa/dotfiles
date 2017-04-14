@@ -1,0 +1,72 @@
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba:rgb
+Cft.hinting:true
+Xft.hintstyle:hintslight
+URxvt*scrollTtyKeypress: true
+URxvt*scrollTtyOutput: false
+!URxvt*scrollWithBuffer: false
+URxvt*secondaryScreen: true
+URxvt*secondaryScroll: true
+URxvt*skipScroll: true
+URxvt*scrollBar: false
+URxvt*urgentOnBell: false
+URxvt*visualBell: false
+URxvt*inheritPixmaps: True
+URxvt*mouseWheelScrollPage: false
+URxvt*font: xft:Inconsolata\\-g for Powerline:style=g:pixelsize=16
+!URxvt*boldFont: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
+!URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
+!URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
+URxvt*saveLines: 10000
+!URxvt*buffered: true
+!URxvt*hold: false
+URxvt.transparent: false
+URxvt.shading:0
+URxvt.borderColor: black
+!URxvt*internalBorder:
+!URxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+URxvt*perl-ext-common: default, resize-font
+URxvt*perl-ext:
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
+
+
+! Ambiance color theme from Terminator -------------------
+URxvt*background:         #2e3436
+URxvt*foreground:         #eeeeec
+URxvt*cursorColor:        #aaaaaa
+! foreground color for underline
+URxvt*colorUL:            #8ae234
+! line color for underline
+URxvt*underlineColor:     #92659a
+
+! black dark/light
+URxvt*color0:             #2e3436
+URxvt*color8:             #ef2929
+! red dark/light
+URxvt*color1:             #cc0000
+URxvt*color9:             #8ae234
+! green dark/light
+URxvt*color2:             #4e9a06
+URxvt*color10:            #8ae234
+! yellow dark/light
+URxvt*color3:             #c4a000
+URxvt*color11:            #fce94f
+! blue dark/light
+URxvt*color4:             #3465a4
+URxvt*color12:            #729fcf
+! magenta dark/light
+URxvt*color5:             #75507b
+URxvt*color13:            #ad7fa8
+! cyan dark/light
+URxvt*color6:             #06989a
+URxvt*color14:            #34e2e2
+! white dark/light
+URxvt*color7:             #555753
+URxvt*color15: 			  #eeeeec

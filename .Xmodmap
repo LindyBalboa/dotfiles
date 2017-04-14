@@ -1,0 +1,16 @@
+keycode 66 = Control_L
+clear Lock
+add Control = Control_L
+!Handled in i3 config
+!keycode 73 = XF86AudioMute 
+!keycode 74 = XF86AudioLowerVolume 
+!keycode 75 = XF86AudioRaiseVolume 
+!keycode 76 = XF86AudioPrev
+!keycode 95 = XF86AudioPlay 
+!keycode 96 = XF86AudioNext 
+keycode 121 = F7 
+keycode 122 = F8 
+keycode 123 = F9 
+keycode 173 = F10
+keycode 171 = F12 
+keycode 172 = F11 
