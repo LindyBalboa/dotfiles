@@ -38,7 +38,8 @@ URxvt.keysym.C-question:  resize-font:show
 
 
 ! Ambiance color theme from Terminator -------------------
-URxvt*background:         #2e3436
+!2e3436
+URxvt*background:         black
 URxvt*foreground:         #eeeeec
 URxvt*cursorColor:        #aaaaaa
 ! foreground color for underline
