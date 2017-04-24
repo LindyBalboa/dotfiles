@@ -1,3 +1,5 @@
+# TODO: Make and abbr for abbr to write to append to this list!
+
 # Collection of fish abbreviations
 # Only run if fish_initialized is not set. 
 # You must run 
@@ -16,7 +18,7 @@ if not set -q fish_initialized
 
 	abbr -a dfgs "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner status"
 	abbr -a dfga "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner add"
-	abbr -a dfgc "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner commit"
+	abbr -a dfgc "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner commit -m"
 	abbr -a dfgp "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner push"
 	set -U fish_initialized
 end
