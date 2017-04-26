@@ -6,6 +6,7 @@
 attributesfile = ~/.gitattributes_global
 
 [filter "nbstrip_full"]
+# jq reads json from stdin and applies these operations to it. It strips output, execution counts, and metadata (collapsed or not etc...) so that they do not clutter git diffs. 
 clean = "jq --indent 1 \
         '(.cells[] | select(has(\"outputs\")) | .outputs) = []  \
         | (.cells[] | select(has(\"execution_count\")) | .execution_count) = null  \
