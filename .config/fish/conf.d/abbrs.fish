@@ -10,6 +10,9 @@
 # in this file!
 
 if not set -q fish_initialized
+	abbr -a mv "mv -i"
+	abbr -a cp "cp -i"
+
 	abbr -a gs "git status"
 	abbr -a ga "git add"
 	abbr -a gc "git commit"
@@ -20,5 +23,7 @@ if not set -q fish_initialized
 	abbr -a dfga "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner add"
 	abbr -a dfgc "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner commit -m"
 	abbr -a dfgp "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner push"
+	abbr -a agl "ag --pager='less -R'"
 	set -U fish_initialized
+
 end
