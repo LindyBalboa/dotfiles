@@ -1,4 +1,6 @@
-set -gx PATH /home/conner/anaconda3/bin /usr/bin /usr/local/bin
+set -gx PATH /home/conner/anaconda3/bin /usr/bin /usr/local/bin /usr/bin/core_perl 
+
+export NODE_PATH=/home/conner/anaconda3/lib/node_modules/
 
 export EDITOR=vim
 export VISUAL=vim
