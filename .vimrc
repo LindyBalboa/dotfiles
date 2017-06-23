@@ -1,4 +1,5 @@
 set shell=/bin/bash
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -12,6 +13,7 @@ call vundle#begin('~/.vim/bundle/')
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'fugitive.vim'
+Plugin 'vim-flake8'
 Plugin 'surround.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Valloric/MatchTagAlways'
@@ -104,3 +106,6 @@ cmap w!! w !sudo tee > /dev/null %
 
 "Quick switch wrapping
 map <leader>w :set wrap! <CR>
+
+"silver searcher coloring
+let g:ackprg = 'ag --nogroup --nocolor --column'
