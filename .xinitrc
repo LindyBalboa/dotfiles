@@ -51,10 +51,10 @@ fi
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 alsactl restore -f ~/.alsa.state
-conky &
+#conky &
 /usr/local/bin/randomwallpaper
 kupfer --no-splash &
-#xflux -l 51.0504 -g 13.7373 -k 2400 &
+xflux -l 51.0504 -g 13.7373 -k 2400 &
 xset -b
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 xfce4-power-manager &
