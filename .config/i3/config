@@ -109,7 +109,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 # reload the configuration file
 bindsym $mod+Shift+q reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-#bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+Delete exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -149,17 +149,17 @@ client.focused_inactive    #0000aa   #000000  #cccccc  #000000    #bbbbbb
 
 bindsym Next exec xbacklight -5%
 bindsym Prior exec xbacklight +5%
-bindsym	F7 exec pactl set-sink-mute 0 toggle
-bindsym	F8 exec amixer sset Master 2%- unmute
-bindsym F9 exec amixer sset Master 2%+ unmute
+bindsym	F7 exec "pactl set-sink-mute 0 toggle; pkill -RTMIN+1 i3blocks"
+bindsym	F8 exec "amixer sset Master 2%- unmute; pkill -RTMIN+1 i3blocks"
+bindsym F9 exec "amixer sset Master 2%+ unmute; pkill -RTMIN+1 i3blocks"
 bindsym F10 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 bindsym $mod+F10 F10
 bindsym F11 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym F12 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
+bindsym $mod+Shift+d exec "setxkbmap -layout de; pkill -RTMIN+1 i3blocks; xmodmap /home/conner/.Xmodmap"
+bindsym $mod+Shift+e exec "setxkbmap -layout us; pkill -RTMIN+1 i3blocks; xmodmap /home/conner/.Xmodmap"
 
-bindsym $mod+Shift+d exec "setxkbmap -layout de; xmodmap /home/conner/.Xmodmap"
-bindsym $mod+Shift+e exec "setxkbmap -layout us; xmodmap /home/conner/.Xmodmap"
 
 bindsym Print exec "maim /tmp/screenshot.png; kolourpaint /tmp/screenshot.png"
 bindsym	Shift+Print exec "maim -s /tmp/screenshot.png; kolourpaint /tmp/screenshot.png"
@@ -197,4 +197,10 @@ mode "power" {
 	bindsym p exec shutdown -P now
 
 	bindsym $mod+u mode "default"
+}
+
+bar {
+        position top
+		font pango:Comic Sans MS 12
+        status_command i3blocks -c ~/.config/i3blocks/config # /home/conner/anaconda3/bin/py3status
 }
