@@ -60,4 +60,5 @@ xset -b
 xfce4-power-manager &
 xbindkeys
 ntpd -gq
+udiskie -vN --tray &
 exec i3 --shmlog-size=26214400
