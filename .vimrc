@@ -12,6 +12,7 @@ call vundle#begin('~/.vim/bundle/')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'lervag/vimtex'
 Plugin 'fugitive.vim'
 Plugin 'vim-flake8'
 Plugin 'surround.vim'
@@ -109,3 +110,11 @@ map <leader>w :set wrap! <CR>
 
 "silver searcher coloring
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_view_general_options
+	\ = '--synctex-forward=@line:0:@tex @pdf'
+let g:vimtex_view_general_options_latexmk = ''
+
+"allowing mousepad scrolling without going back into the buffer
+set mouse=a
