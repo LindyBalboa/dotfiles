@@ -23,7 +23,11 @@ if not set -q fish_initialized
 	abbr -a dfga "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner add"
 	abbr -a dfgc "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner commit -m"
 	abbr -a dfgp "/usr/bin/git --git-dir=/home/conner/.dfg --work-tree=/home/conner push"
+
 	abbr -a agl "ag --pager='less -R'"
+
+	abbr -a jn "jupyter notebook"
+
 	set -U fish_initialized
 
 end
