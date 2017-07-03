@@ -116,5 +116,10 @@ let g:vimtex_view_general_options
 	\ = '--synctex-forward=@line:0:@tex @pdf'
 let g:vimtex_view_general_options_latexmk = ''
 
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+  endif
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+
 "allowing mousepad scrolling without going back into the buffer
 set mouse=a
