@@ -54,6 +54,23 @@ endif
 au BufRead,BufNewFile *.py :call Au_python()
 au BufWritePre,FileWritePre *.py :%s/\s\+$//g " Delete trailing whitespace
 
+function! Au_latex()
+    imap .<Space> .<CR>
+	imap ?<Space> ?<CR>
+	imap !<Space> !<CR>
+
+	:2mat none
+
+	:set spell spelllang=en_us
+	:hi SpellBad ctermfg=black
+	:hi SpellLocal ctermfg=black
+	:hi SpellRare ctermfg=black
+	:hi SpellCap ctermfg=black
+endfunction
+
+" LaTeX specific
+au BufRead,BufNewFile *.tex :call Au_latex()
+
 "folding
 autocmd Syntax c,cpp,vim,xml,html,xhtml setlocal foldmethod=syntax
 autocmd Syntax c,cpp,vim,xml,html,xhtml normal zR
