@@ -1,0 +1,34 @@
+markup=pango
+
+[cpu]
+command=~/.config/i3blocks/modules/cpu.sh
+interval=1
+
+[mem]
+command=~/.config/i3blocks/modules/mem.sh
+interval=1
+
+[volume]
+command=~/.config/i3blocks/modules/volume.sh
+interval=once
+signal=1
+# use 'pkill -RTMIN+1 i3blocks' after changing the volume
+align=left
+
+[wifi]
+command=~/.config/i3blocks/modules/wifi.sh
+interval=5
+
+[keymap]
+command=~/.config/i3blocks/modules/keymap.sh
+interval=once
+signal=1
+
+[batter]
+command=~/.config/i3blocks/modules/battery
+interval=5
+
+[time]
+command=date '+%D %R'
+interval=5
+
