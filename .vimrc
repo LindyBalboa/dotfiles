@@ -62,6 +62,9 @@ function! Au_latex()
 	:2mat none
 
 	:set spell spelllang=en_us
+	" use 2zg and 2zw to add to dictionary only for local directory
+	:setlocal spellfile+=~./vim/spell/en.utf-8.add
+	:setlocal spellfile+=localspell.utf-8.add
 	:hi SpellBad ctermfg=black
 	:hi SpellLocal ctermfg=black
 	:hi SpellRare ctermfg=black
@@ -133,6 +136,8 @@ let g:vimtex_view_general_options
 	\ = '--synctex-forward=@line:0:@tex @pdf'
 let g:vimtex_view_general_options_latexmk = ''
 
+let g:vimtex_quickfix_open_on_warning = 0
+
 let g:tex_flavor = 'latex'
 if !exists('g:ycm_semantic_triggers')
    let g:ycm_semantic_triggers = {}
@@ -141,3 +146,5 @@ let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 
 "allowing mousepad scrolling without going back into the buffer
 set mouse=a
+
+let g:tex_conceal=""
