@@ -20,8 +20,16 @@ xmap ga <Plug>(EasyAlign)
 Plug 'junegunn/fzf.vim'
 nnoremap <leader>\ :FZF<CR>
 " }}}
+" Goyo: Center text {{{
+Plug 'junegunn/goyo.vim'
+
+let g:goyo_linenr=1
+nnoremap <leader>gg :Goyo<CR>
+"}}}
 " limelight: focus on current paragraph {{{
 Plug 'junegunn/limelight.vim'
+
+nnoremap <leader>gl :Limelight!!<CR>
 let g:limelight_conceal_ctermfg = 000
 "}}}
 " Vimtex {{{
@@ -40,6 +48,7 @@ let g:tex_flavor = 'latex'
 let g:vimtex_fold_enabled = 1
 
 let g:vimtex_complete_close_braces = 1
+let g:vimtex_complete_recursive_bib = 1
 " }}}
 " YouCompleteMe {{{
 Plug 'Valloric/YouCompleteMe'
@@ -58,16 +67,19 @@ au VimEnter *.tex
 
 " }}}
 
+
 Plug 'jiangmiao/auto-pairs'
 Plug 'ivyl/vim-bling' "Cursor blink on jump
+Plug 'julienr/vim-cellmode'
 Plug 'kopischke/fish.vim'
 Plug 'nvie/vim-flake8'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'ivanov/vim-ipython'
 Plug 'Valloric/MatchTagAlways'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
 Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/ZoomWin'
 
@@ -117,15 +129,19 @@ function! Au_latex()
 	:hi SpellRare ctermfg=black
 	:hi SpellCap ctermfg=black
 
-	" Auto aligning of tables
-	imap & &<ESC>mzgaip*&`zf&a 
-	" &<ESC> type & and go to Normal Mode
-	" mz     set mark
-	" gaip   enter alignment mode
-	" *&     align on all ampersands
-	" `z     go back to marked position
-	" f&     jump to next ampersand LIKELY to be where you were
-	" a_     append and add a space
+	noremap \& :Tabularize /&<CR>
+	inoremap <silent> & &<Esc>:call <SID>align()<CR>a
+    function! s:align()
+	  echom "its a start"
+      let p = '^.*&.*&$'
+      if exists(':Tabularize') && getline('.') =~# '^.*&' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+        let column = strlen(substitute(getline('.')[0:col('.')],'[^&]','','g'))
+        let position = strlen(matchstr(getline('.')[0:col('.')],'.*&\s*\zs.*'))
+        Tabularize/&/l1
+        normal! 0
+        call search(repeat('[^&]*&',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+      endif
+    endfunction
 endfunction
 
 au BufRead,BufNewFile *.tex :call Au_latex()
