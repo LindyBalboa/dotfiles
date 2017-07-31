@@ -32,6 +32,35 @@ Plug 'junegunn/limelight.vim'
 nnoremap <leader>gl :Limelight!!<CR>
 let g:limelight_conceal_ctermfg = 000
 "}}}
+" Ultisnips {{{
+Plug 'SerVer/ultisnips'
+" UltiSnips completion function that tries to expand a snippet. If there's no
+" snippet for expanding, it checks for completion window and if it's
+" shown, selects first element. If there's no completion window it tries to
+" jump to next placeholder. If there's no placeholder it just returns TAB key 
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips#JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<CR>"
+let g:UltiSnipsJumpForwardTrigger = "<TAB>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-TAB>"
+
+" }}}
 " Vimtex {{{
 Plug 'lervag/vimtex'
 
@@ -80,7 +109,6 @@ Plug 'Valloric/MatchTagAlways'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
-Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/ZoomWin'
 
 call plug#end()
@@ -102,7 +130,7 @@ function! Au_python()
 endfunction
 
 au BufRead,BufNewFile *.py :call Au_python()  " load settings
-au BufWritePre,FileWritePre *.py :%s/\s\+$//g " Delete trailing whitespace
+au BufWritePre,FileWritePre *.py :%s/\s\+$//e " Delete trailing whitespace
 " }}}
 " Return cursor to last position when opening a file {{{
 if has("autocmd")
