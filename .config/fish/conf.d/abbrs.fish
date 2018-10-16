@@ -26,7 +26,7 @@ if not set -q fish_initialized
 
 	abbr -a agl "ag --pager='less -R'"
 
-	abbr -a jn "jupyter notebook"
+	abbr -a jn "jupyter notebook --notebook-dir='.'"
 
 	set -U fish_initialized
 

@@ -4,9 +4,9 @@ label="<span color=\"red\">MEM</span>"
 
 read free total <<< $(free -h | awk 'NR==2{print $3 " " $2}')
 
-free_unit=$(echo $free | rev | cut -c1)
-free="${free::-1}"
-total="${total::-1}"
+free_unit=$(echo $free | rev | cut -c2)
+free="${free::-2}"
+total="${total::-2}"
 
 if [[ $free_unit == "M" ]]; then
   pct=$(echo "" | awk -v FREE=$free -v TOTAL=$total '{print  int(100*(FREE/1000)/TOTAL)"%"}')

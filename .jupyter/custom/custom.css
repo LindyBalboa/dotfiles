@@ -1,6 +1,12 @@
+div.container { 
+	min-width: 1000px;
+}
+div.prompt{
+	margin-left: -50px;
+}
 /* Change code font */
 .CodeMirror pre {
-    font-family: 'Inconsolata-g for Powerline';
+    font-family: 'Inconsolata-g for Powerline', monospace;
     font-size: 12pt;
 }
 
@@ -153,4 +159,4 @@ div#notebook {
 #notebook_name {
     font-weight: 200;
 }
-*/
+

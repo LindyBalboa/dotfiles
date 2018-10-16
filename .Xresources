@@ -1,8 +1,8 @@
 Xft.dpi: 96
 Xft.antialias: true
-Xft.rgba:rgb
-Cft.hinting:true
-Xft.hintstyle:hintslight
+Xft.rgba: rgb
+Xft.hinting:true
+Xft.hintstyle: hintslight
 URxvt*scrollTtyKeypress: true
 URxvt*scrollTtyOutput: false
 !URxvt*scrollWithBuffer: false
@@ -15,7 +15,7 @@ URxvt*visualBell: false
 URxvt*inheritPixmaps: True
 URxvt*mouseWheelScrollPage: false
 URxvt*font: xft:Inconsolata\\-g for Powerline:style=g:pixelsize=16
-!URxvt*boldFont: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
+URxvt*boldfont: xft:Inconsolata\\-g for Powerline:style=g:pixelsize=16
 !URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
 !URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
 URxvt*saveLines: 10000
@@ -37,8 +37,8 @@ URxvt.keysym.C-equal:     resize-font:reset
 URxvt.keysym.C-question:  resize-font:show
 
 
-! Ambiance color theme from Terminator -------------------
-!2e3436
+ Ambiance color theme from Terminator -------------------
+2e3436
 URxvt*background:         black
 URxvt*foreground:         #cccccc
 URxvt*cursorColor:        #aaaaaa
@@ -52,7 +52,7 @@ URxvt*color0:             #2e3436
 URxvt*color8:             #ef2929
 ! red dark/light
 URxvt*color1:             #cc0000
-URxvt*color9:             #8ae234
+URxvt*color9:             #EF2929
 ! green dark/light
 URxvt*color2:             #4e9a06
 URxvt*color10:            #8ae234
@@ -71,3 +71,4 @@ URxvt*color14:            #34e2e2
 ! white dark/light
 URxvt*color7:             #555753
 URxvt*color15: 			  #eeeeec
+

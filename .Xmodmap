@@ -1,6 +1,8 @@
 keycode 66 = Control_L
 clear Lock
 add Control = Control_L
+remove mod1 = Alt_L
+add mod3 = Alt_L
 !Handled in i3 config
 !keycode 73 = XF86AudioMute 
 !keycode 74 = XF86AudioLowerVolume 
@@ -8,6 +10,7 @@ add Control = Control_L
 !keycode 76 = XF86AudioPrev
 !keycode 95 = XF86AudioPlay 
 !keycode 96 = XF86AudioNext 
+keycode 68 = F2 XF86_Switch_VT_2 F1 XF86_Switch_VT_2
 keycode 121 = F7 
 keycode 122 = F8 
 keycode 123 = F9 

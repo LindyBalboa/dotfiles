@@ -828,7 +828,7 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   set -l __bobthefish_detached_glyph          \u27A6
   set -l __bobthefish_tag_glyph               \u2302
   set -l __bobthefish_nonzero_exit_glyph      '! '
-  set -l __bobthefish_superuser_glyph         'SUPER '
+  set -l __bobthefish_superuser_glyph         '$ '
   set -l __bobthefish_bg_job_glyph            '% '
   set -l __bobthefish_hg_glyph                \u263F
 
@@ -1324,7 +1324,7 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
       set -l ruby_red af0000
 
       set __color_initial_segment_exit     $white $red[2] --bold
-      set __color_initial_segment_su       $white $red[2] --bold
+      set __color_initial_segment_su       $white $green[2] --bold
       set __color_initial_segment_jobs     $white $blue[3] --bold
 
       set __color_path                     $grey[3] $grey[2]

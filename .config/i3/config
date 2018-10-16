@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -31,6 +31,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt -e fish
+
+# Fullscreen inside float https://www.reddit.com/r/i3wm/comments/6pwrpb/i_wrote_a_line_to_make_youtube_floating_fullscreen/
+bindsym $mod+y fullscreen disable, floating enable, resize set 251 170, sticky enable, move window to position 1515 20
 
 # kill focused window
 bindsym $mod+c kill
@@ -174,14 +177,21 @@ bindsym $mod+o mode "launcher"
 mode "launcher" {
 	bindsym f exec firefox; mode "default"
 	bindsym $mod+f exec firefox; mode "default"
+
 	bindsym s exec spotify; mode "default"
 	bindsym $mod+s exec spotify; mode "default"
+
 	bindsym t exec thunderbird; mode "default"
 	bindsym $mod+t exec thunderbird; mode "default"
+
 	bindsym m exec mendeleydesktop; mode "default"
 	bindsym $mod+m exec mendeleydesktop; mode "default"
+
 	bindsym d exec dolphin; mode "default"
 	bindsym $mod+d exec dolphin; mode "default"
+
+	bindsym e exec "emacsclient -c"; mode "default"
+	bindsym $mod+e exec "emacsclient -c"; mode "default"
 
 	bindsym $mod+o mode "default"
 }
@@ -192,7 +202,7 @@ bindsym $mod+u mode "power"
 mode "power" {
 	bindsym l exec i3lock -i /home/conner/Pictures/Camera/20150802_141759.png; mode "default"
 	bindsym $mod+l exec i3lock -i /home/conner/Pictures/Camera/20150802_141759.png; mode "default"
-	bindsym s exec systemctl suspend; mode default #i3lock -i /home/conner/Pictures/Camera/20150802_141759.png; exec sleep 0.3; exec systemctl suspend; mode "default"
+	bindsym s exec i3lock -i /home/conner/Pictures/Camera/20150802_141759.png; exec systemctl suspend; mode "default"
 	bindsym $mod+s exec i3lock -i /home/conner/Pictures/Camera/20150802_141759.png; exec systemctl suspend; mode "default"
 	bindsym p exec shutdown -P now
 
@@ -201,6 +211,6 @@ mode "power" {
 
 bar {
         position top
-		font pango:Comic Sans MS 12
+		font pango:Comic Neue Bold 13
         status_command i3blocks -c ~/.config/i3blocks/config # /home/conner/anaconda3/bin/py3status
 }
