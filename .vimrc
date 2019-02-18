@@ -85,8 +85,9 @@ Plug 'nelstrom/vim-markdown-folding'
 " Stay{{{
 " Added this because synctex reverse search from zathura
 " caused a buffer update which triggered fold calculation
-Plug 'kopischke/vim-stay'
-set viewoptions=cursor,folds,slash,unix
+" But it broke folding on some files and seems to no longer be needed
+"Plug 'kopischke/vim-stay'
+"set viewoptions=cursor,folds,slash,unix
 "}}}
 "
 " Syntastic {{{
@@ -154,6 +155,10 @@ let g:tex_flavor = 'latex'
 let g:vimtex_fold_enabled = 1
 "let g:vimtex_fold_manual = 1 " Stops autoupdates of folds. Handled by FastFold. This is necessary for speed.
 let g:vimtex_fold_types = {
+\    'envs' : {
+\       'whitelist' : ['figure','table'],
+\       'blacklist' : [],
+\    },
 \    'sections' : {
 \      'sections' : [
 \	     'part',

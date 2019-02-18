@@ -1,5 +1,9 @@
 markup=pango
 
+[mpd]
+command=~/.config/i3blocks/modules/mpd.sh
+interval=1
+
 [cpu]
 command=~/.config/i3blocks/modules/cpu.sh
 interval=1
@@ -28,7 +32,7 @@ signal=1
 command=~/.config/i3blocks/modules/battery
 interval=5
 
-[time]
-command=date '+%D %R'
-interval=5
+# [time]
+# command=date '+%D %R'
+# interval=5
 

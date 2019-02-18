@@ -66,4 +66,5 @@ udiskie -vN --tray &
 nm-applet &
 #emacs --daemon & 
 dolphin --daemon &
+mpd ~/.config/mpd/mpd.config &
 exec i3 --shmlog-size=26214400

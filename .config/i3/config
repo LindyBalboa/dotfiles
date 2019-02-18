@@ -155,10 +155,10 @@ bindsym Prior exec xbacklight +5%
 bindsym	F7 exec "pactl set-sink-mute 0 toggle; pkill -RTMIN+1 i3blocks"
 bindsym	F8 exec "amixer sset Master 2%- unmute; pkill -RTMIN+1 i3blocks"
 bindsym F9 exec "amixer sset Master 2%+ unmute; pkill -RTMIN+1 i3blocks"
-bindsym F10 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym F10 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous & mpc prev"
 bindsym $mod+F10 F10
-bindsym F11 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym F12 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym F11 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause & mpc toggle"
+bindsym F12 exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next & mpc next"
 
 bindsym $mod+Shift+d exec "setxkbmap -layout de; pkill -RTMIN+1 i3blocks; xmodmap /home/conner/.Xmodmap"
 bindsym $mod+Shift+e exec "setxkbmap -layout us; pkill -RTMIN+1 i3blocks; xmodmap /home/conner/.Xmodmap"
@@ -211,6 +211,6 @@ mode "power" {
 
 bar {
         position top
-		font pango:Comic Neue Bold 13
+		font pango:Courier Prime Mono  13
         status_command i3blocks -c ~/.config/i3blocks/config # /home/conner/anaconda3/bin/py3status
 }

@@ -1,4 +1,6 @@
-set -gx PATH /usr/bin /usr/local/bin /usr/bin/core_perl /usr/bin/vendor_perl /home/conner/anaconda3/bin 
+set -gx PATH /usr/bin /usr/local/bin /usr/bin/core_perl /usr/bin/vendor_perl 
+set -gx PATH $PATH /home/conner/anaconda3/bin /home/conner/.gem/ruby/2.5.0/bin/
+set -gx PATH $PATH /usr/share/krakatau 
 set -x PYTHONPATH $PYTHONPATH "/home/conner/TUD/Masters/Analysis:/home/conner/PyModules"
 
 export NODE_PATH=/home/conner/anaconda3/lib/node_modules/
